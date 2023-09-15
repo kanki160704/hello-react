@@ -18,7 +18,7 @@ function RichTextEditor() {
       matchVisual: false,
     },
   };
-  
+
 
   const handleChange = (value) => {
     setContent(value);
