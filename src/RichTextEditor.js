@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -18,24 +18,6 @@ function RichTextEditor() {
       matchVisual: false,
     },
   };
-
-  useEffect(() => {
-    setContent('<p>Start typing...</p>');
-  
-    const resizeObserverError = setInterval(() => {
-      const { error } = console;
-      console.error = (message) => {
-        if (message.includes('ResizeObserver loop')) {
-          return;
-        }
-        error.apply(console, arguments);
-      };
-    }, 1000);
-  
-    return () => {
-      clearInterval(resizeObserverError);
-    };
-  }, []);
   
 
   const handleChange = (value) => {
